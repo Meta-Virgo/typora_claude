@@ -7,6 +7,12 @@
 
 这是一款对 **Claude** 进行极致还原的 Typora 主题，其中Markdown内容的所有细节皆完美还原。基于设计风格，我们对软件的侧边栏、一体化和设置界面进行了深度适配，细致入微。
 
+## 预览图
+
+<img width="1389" height="888" alt="Snipaste_2026-05-17_13-59-35" src="https://github.com/user-attachments/assets/54c89ece-2ac5-4ab1-b8a4-ab01ba6ec5f1" /><img width="1389" height="888" alt="Snipaste_2026-05-17_14-00-23" src="https://github.com/user-attachments/assets/96836b53-e286-4509-945a-5281eb20efb2" />
+
+
+
 ## 使用
 
 1. 下载releases的第一个`zip` 文件，解压。
