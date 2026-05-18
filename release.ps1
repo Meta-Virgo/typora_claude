@@ -201,6 +201,7 @@ Write-Host "Zip:        $(if ([string]::IsNullOrWhiteSpace($ZipPath)) { 'auto-ge
 Write-Host "Notes:      $notesFullPath"
 
 Invoke-NetworkChecked "Fetch latest remote state" "git fetch origin main --tags"
+Invoke-NetworkChecked "Integrate latest remote main" "git pull --rebase --autostash origin main"
 
 $releaseExists = Test-NativeSuccess { gh release view $tagName --repo $Repo }
 
@@ -240,7 +241,22 @@ if ($DryRun -or $hasStagedChanges) {
     Write-Host "==> No file changes to commit; using current HEAD."
 }
 
-Invoke-Checked "Create local tag" "git tag $tagName"
+$localTagExists = Test-NativeSuccess { git rev-parse -q --verify "refs/tags/$tagName" }
+if ($localTagExists) {
+    $localTagCommit = git rev-list -n 1 $tagName
+    $headCommit = git rev-parse HEAD
+
+    if ($localTagCommit -ne $headCommit) {
+        Write-Host ""
+        Write-Host "==> Local tag exists on $localTagCommit; updating $tagName to current HEAD $headCommit."
+        Invoke-Checked "Update local tag" "git tag -f $tagName"
+    } else {
+        Write-Host ""
+        Write-Host "==> Local tag already exists on current HEAD; reusing $tagName."
+    }
+} else {
+    Invoke-Checked "Create local tag" "git tag $tagName"
+}
 Invoke-NetworkChecked "Push main" "git push origin main"
 Invoke-NetworkChecked "Push tag" "git push origin $tagName"
 Invoke-NetworkChecked "Create GitHub release" "gh release create $tagName '$assetCopy' --repo $Repo --title '$displayVersion' --notes-file '$notesOutput'"
