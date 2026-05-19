@@ -288,17 +288,34 @@ body {
     display: none!important;
 }
 
-#context-menu,
+/* #context-menu,
 .dropdown-menu {
     box-shadow:
         0 0 0 0.5px rgba(255 255 255 / .1),
         0 8px 32px rgba(0 0 0 / .5),
         0 2px 8px rgba(0 0 0 / .4);
-}
+} */
+
+/* #context-menu,
+.dropdown-menu {
+    border-radius: 10px;
+} */
 
 #context-menu,
 .dropdown-menu {
-    border-radius: 10px;
+    background: rgba(38, 38, 36, 0.78);
+    backdrop-filter: blur(18px) saturate(1.35);
+    -webkit-backdrop-filter: blur(18px) saturate(1.35);
+    
+    box-shadow:
+        0 14px 36px rgba(0, 0, 0, 0.36),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+    border-radius: 12px;
+}
+
+.menu-item-container a.menu-style-btn {
+    background: none!important;
 }
 
 /* Add a subtle entrance only to top-level context menus, not submenus */
@@ -378,6 +395,18 @@ body {
     color: #E8E4D8!important;
 }
 
+.dropdown-menu .menu-style-btn .ty-icon {
+    color: rgba(250, 249, 245, 0.72);
+}
+
+.dropdown-menu .menu-style-btn:hover .ty-icon {
+    color: #FAF9F5;
+}
+
+.dropdown-menu .menu-style-btn.disabled .ty-icon {
+    color: rgba(250, 249, 245, 0.28);
+}
+
 /*--- Scrollbar ---*/
 ::-webkit-scrollbar {
     width: 6px;
@@ -401,6 +430,10 @@ body {
 .stopselect.dropmenu.sidebar-menu.open.active-tab-files.use-file-tree-style ::-webkit-scrollbar-thumb {
     background-color: transparent !important;
     border: none !important;
+}
+
+.ty-lang-list::-webkit-scrollbar {
+    display: none!important;
 }
 
 /*--- Footer ---*/
@@ -1636,9 +1669,37 @@ a:hover {
 }
 
 /*--- File Tree ---*/
+
+/* 文件树节点的间距、对齐优化 */
+/* 从第三层级开始，调整最佳的上下级标题水平间距 */
+.file-tree-node > .file-node-children > .file-library-node>.file-node-children> .file-library-node {
+    padding-left: 13px;
+}
+
+/* 用文件节点内间距对齐同级文件夹图标和文件图标 */
+.file-library-node.file-tree-node.file-library-file-node {
+    padding-left: 10.5px!important;
+}
+
+/* 用文件夹图标外间距对齐文件夹标题和文件标题 */
+.file-node-icon.fa.fa-folder {
+    margin-right: 6px;
+}
+
 /* Hide .md extension */
 .file-node-title-ext-part {
     display: none;
+}
+
+.file-library-node[data-has-sub="false"][data-is-directory="true"]
+> .file-node-content
+> .file-node-icon.fa-folder:before {
+    content: "\f114";
+}
+
+/* 移除小三角 */
+.file-node-open-state {
+    display: none!important;
 }
 
 /* Node expand animation */
@@ -1781,6 +1842,61 @@ a:hover {
 }
 
 /*--- File Tree Icons ---*/
+
+/* 不同层级的文件夹图标颜色 */
+/* 第 1 层文件夹图标 */
+/* 根目录之下的第 1 层文件夹图标 */
+#file-library-tree
+> .file-tree-node.file-node-root
+> .file-node-children
+> .file-tree-node
+> .file-node-content
+> .file-node-icon.fa-folder::before {
+    color: #D97757 !important;
+}
+
+/* 第 2 层文件夹图标 */
+#file-library-tree
+> .file-tree-node.file-node-root
+> .file-node-children
+> .file-tree-node
+> .file-node-children
+> .file-tree-node
+> .file-node-content
+> .file-node-icon.fa-folder::before {
+    color: #C9826F !important;
+}
+
+/* 第 3 层文件夹图标 */
+#file-library-tree
+> .file-tree-node.file-node-root
+> .file-node-children
+> .file-tree-node
+> .file-node-children
+> .file-tree-node
+> .file-node-children
+> .file-tree-node
+> .file-node-content
+> .file-node-icon.fa-folder::before {
+    color: #A98E82 !important;
+}
+
+/* 第 4 层及更深文件夹图标 */
+#file-library-tree
+> .file-tree-node.file-node-root
+> .file-node-children
+> .file-tree-node
+> .file-node-children
+> .file-tree-node
+> .file-node-children
+> .file-tree-node
+> .file-node-children
+.file-tree-node
+> .file-node-content
+> .file-node-icon.fa-folder::before {
+    color: #8F8A83 !important;
+}
+
 .fa-folder:before {
     color: var(--LOGO-color);
 }
