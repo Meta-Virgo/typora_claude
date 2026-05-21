@@ -1,136 +1,223 @@
-[README.md](https://github.com/user-attachments/files/27866830/README.md)
+# ClaudeFlat
 
-# Quiet Serif
+> 一个基于 [blaxisomu/typora_claude](https://github.com/blaxisomu/typora_claude) 深度修改的 Typora 亮色主题。  
+> 以 Claude 网页的阅读气质为灵感，保留温暖纸张感、衬线排版和低干扰写作体验，同时针对 Typora 的侧边栏、文件树、大纲、菜单页、代码块、YAML、Callout 和 PDF 导出做了进一步适配。
 
-又名“ **静衬线** ”，一个为专注阅读、长文写作和 Markdown 编辑设计的 Typora 衬线主题。该主题注重温暖的纸张质感、安静的衬线排版、柔和的边框和低干扰的界面细节。作者通过两周的时间打磨细节、修复瑕疵，以追求最佳的写作体验，该主题已然臻入化境。
+![Typora](https://img.shields.io/badge/Typora-theme-5f6f52)
+![CSS](https://img.shields.io/badge/CSS-optimized-d97757)
+![Theme](https://img.shields.io/badge/Claude%20Me-light-faf9f5)
 
-## 介绍
+## 预览
 
-这是一款对 **Claude** 进行极致还原的 Typora 主题，其中Markdown内容的所有细节皆完美还原。基于设计风格，我们对软件的侧边栏、一体化和设置界面进行了深度适配，细致入微。
+![image-20260521195605901](./README.assets/image-20260521195605901.png)
 
-## 预览图
+---
 
-<img width="1389" height="888" alt="Snipaste_2026-05-17_13-59-35" src="https://github.com/user-attachments/assets/54c89ece-2ac5-4ab1-b8a4-ab01ba6ec5f1" /><img width="1389" height="888" alt="Snipaste_2026-05-17_14-00-23" src="https://github.com/user-attachments/assets/96836b53-e286-4509-945a-5281eb20efb2" />
+![image-20260521200208214](./README.assets/image-20260521200208214.png)
 
-## 预览视频
+------
 
-**文件树：**
+![image-20260521195821264](./README.assets/image-20260521195821264.png)
 
+---
 
+![image-20260521200020272](./README.assets/image-20260521200020272.png)
 
-https://github.com/user-attachments/assets/30c8069e-28b9-4bb2-8960-5943ebf168cc
+## 简介
 
+ClaudeFlat是一个面向长文写作、阅读、知识整理和 Markdown 编辑的 Typora 主题。
 
+本主题基于 `typora_claude / Quiet Serif` 修改而来，在原主题的 Claude 风格基础上，进一步统一了颜色变量、界面细节、侧边栏交互和 Typora 一体化模式表现。整体风格偏温暖、克制、低对比，适合需要长时间专注写作的场景。
 
-## 使用
+## 特性
 
-1. 下载releases的第一个`zip` 文件，解压。
-2. 全选并安装三个字体文件夹里所有的字体。
-3. 将根目录中的两个`CSS` 文件拖入 Typora 主题文件夹中。
-   *如何打开主题文件夹？*
-   1. 打开软件中的偏好设置
-   2. 找到外观
-   3. `打开主题文件夹`
+- **Claude 风格的亮色阅读界面**  
+  温暖纸张底色、柔和边框、低干扰阴影和克制的强调色。
 
-## 须知
+- **衬线正文排版**  
+  正文优先使用衬线字体，提升长文阅读和写作时的文本质感。
 
-### 内容
+- **完整 Markdown 细节适配**  
+  优化标题、段落、列表、任务列表、表格、引用、链接、脚注、公式、代码块和行内代码。
 
-- **为了做到尽可能的简洁和美观，我们不得不去除了很多不必要的元素** 
+- **GitHub Alert / Callout 适配**  
+  对 Note、Tip、Important、Warning、Caution 等提示块做了统一的视觉设计。
 
-  - 去除了收展侧边栏按钮
+- **YAML 元信息块美化**  
+  为 Typora 的 YAML Front Matter 添加纸张质感、标签和轻量装饰。
 
-  - 去除了切换源码模式按钮
+- **侧边栏与文件树重绘**  
+  优化文件列表、文件树、搜索框、大纲、选中态、悬停态、图标、缩进和超长文件名显示。
 
-  - 隐藏了粗体、斜体、行内代码、高亮和下划线的特殊符
+- **一体化模式适配**  
+  针对 Typora 的一体化窗口、顶部栏、菜单页、最近文件、表单和按钮做了统一风格处理。
 
-  - 隐藏了大部分水平滚动条
+- **右键菜单与浮层优化**  
+  调整菜单圆角、阴影、动效、悬停状态和视觉层级。
 
-- **为了补全 Claude 中缺失的 Markdown 元素，我们做了如下变化**
+- **PDF / 打印适配**  
+  针对导出 PDF 和打印时的边距、标题、表格、代码块等细节进行优化。
 
-  - 将暗色主题下的加粗由字重变化改为颜色变化[^1]
-  - 将高亮改为下滑波浪线[^2]
-  - 对 YAML 和 Callout 进行了主题适配
+- **更统一的 CSS 结构**  
+  使用集中变量管理颜色、字体、圆角、阴影和尺寸，方便后续二次修改。
 
-### 其他
+## 安装
 
-- **关于MAC 系统**
+### 1. 下载主题文件
 
-  因为我没有这个东西，一些适配问题都是根据群友的反馈而做的，所以有关这方面的任何问题都可随时与我反馈。
+```text
+ClaudeFlat.css
+```
 
-- **关于软件版本**
-  Windows平台：1.13.4及以上。
+这样在 Typora 的主题列表中会显示为更简洁的主题名。
 
-- **关于页宽**：*为什么我全屏之后两边会大片留白？*
+### 2. 安装推荐字体
 
-  1. ==为了全量还原 Claude 网页==（理论页宽768px，最大页宽720px，最终页宽<720px）。
+本主题默认优先使用以下字体族：
 
-  2. 以下是AI整理的人类最舒适的页宽范围：
+```css
+--font-serif: "Anthropic Serif Web Text", Georgia, "Times New Roman", "Noto Serif SC", serif;
+--font-sans: "Anthropic Sans Web Text", "Noto Sans SC", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+--font-mono: "Anthropic Mono Variable", ui-monospace, monospace;
+```
 
-    |     用途      | 页宽       |
-    | :-----------: | ---------- |
-    |   长文阅读    | 680～740px |
-    |   日常写作    | 640～700px |
-    |   资料整理    | 700～780px |
-    | 代码/表格较多 | 800～960px |
+推荐安装：
 
-    **本主题采用的页宽刚好在黄金区间内，尽量覆盖到全场景，也就是 ` 678px` 。**
+- Anthropic Serif Web Text
+- Anthropic Sans Web Text
+- Anthropic Mono Variable
+- Noto Serif SC / 思源宋体
+- Noto Sans SC / 思源黑体
 
-> [!NOTE]
->
-> 水平滚动的快捷键是 `Shift+滚轮` ；粗体、斜体、行内代码、高亮和下划线的最佳实践：先选中再按快捷键。
+### 3. 放入 Typora 主题文件夹
 
-### 设置快捷键
+在 Typora 中打开：
 
-<!--以下流程可能只适用于Windows平台-->
+```text
+偏好设置 → 外观 → 打开主题文件夹
+```
 
-1. 打开设置里的高级设置。
+将 CSS 文件复制到该文件夹中。
 
-2. 找到 `conf.user.json` 并打开。
+### 4. 重启 Typora
 
-3. 可以参考我的快捷键：
-   ```json
-     // Custom key binding, which will override the default ones.
-     // see https://support.typora.io/Shortcut-Keys/#windows--linux for detail
-     "keyBinding": {
-       // for example: 
-       // "Always on Top": "Ctrl+Shift+P"
-       // All other options are the menu items 'text label' displayed from each typora menu
-       "Inline Math": "Ctrl+M"	//行内数学公式
-       "Comment": "Ctrl+L"	//注释
-       "Toggle SIdebar": "Alt+`"	//收展侧边栏
-       "Select Styled Scope": "Ctrl+D"
-       "Select Word": "Ctrl+E"
-       "Highlight": "Ctrl+O"	//高亮（下波浪线）
-       "Redo": "Ctrl+Alt+Z"        
-     },
-   ```
+重启 Typora 后，在主题列表中选择：
 
-### 关于字体
+```text
+ClaudeFlat
+```
 
-Claude 前端的字体是没有考虑到中文用户，因为（更新后）正文的中文字体的回退居然变为了非衬线体，而英文字体则使用它们自制的因为衬线体，所以该主题的中文字体选用了思源的衬线体以统一视觉。<!--Claude官方是没有自研的中文字体-->
+或与你 CSS 文件名对应的主题名称。
 
-仓库里的英文字体就是从它们的网页扒下来的，随便用。
+## 推荐设置
 
-## 建议
+为了获得更接近设计目标的体验，建议：
 
-> [!TIP]
->
-> 我的一些建议，或许能够优化你的体验：
->
-> 1. 将缩放改为**120%** 
-> 2. 外观模式改为**一体化**
-> 3. 关闭代码快行号
-> 4. 建议加qq群给我即时反馈和建议（github也可以）：**747699182**
+- 外观模式：使用 **一体化模式**
+- 缩放比例：可尝试 **120%**
+- 代码块：建议关闭代码块行号
+- Markdown 操作：高亮、下划线、粗体、斜体等建议先选中文字再使用快捷键
+- 水平滚动：如表格或代码较宽，可使用 `Shift + 鼠标滚轮`
 
-## PDF打印
+## 自定义
 
-以预设的A4纸尺寸打印会比编辑区的行宽少一个字符，但这==完全不会出现任何排版错误==，仅仅与编辑区视图的行宽不一致而已。如果自定义页面大小为220mmX297mm将与编辑区的行宽完全一致，在不进行打印时导出PDF会很好。
+主题的大部分颜色、字体和尺寸都集中在 `:root` 变量中。你可以优先修改这些变量，而不是直接改大量选择器。
 
-220mm可能是完整显示与编辑区一致行宽的最小宽度，再向上加宽已经不影响内容排版，只是增加PDF两侧的空白区域。
+常用变量：
 
-----
+```css
+:root {
+  --bg-color: #faf9f5;
+  --hover-color: #f0eee6;
+  --font-color: #141413;
+  --accent-color: #d97757;
+  --accent-color-dark: #a94f2d;
 
-[^1]: 暗色主题下的粗体十分不明显，如果把字体加粗则还有点伤眼，故由主题色代替字重变化。
-[^2]: 荧光笔高亮会影响整体的纸质感，故改为下滑波浪线。
+  --font-serif: "Anthropic Serif Web Text", Georgia, "Times New Roman", "Noto Serif SC", serif;
+  --font-sans: "Anthropic Sans Web Text", "Noto Sans SC", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "Anthropic Mono Variable", ui-monospace, monospace;
 
+  --sidebar-width: 280px;
+  --radius-8: 8px;
+  --radius-12: 12px;
+  --radius-20: 20px;
+}
+```
+
+### 修改强调色
+
+```css
+:root {
+  --accent-color: #d97757;
+  --accent-color-dark: #a94f2d;
+  --accent-color-soft: #d9775733;
+  --accent-color-border: #d9775740;
+}
+```
+
+### 修改正文宽度
+
+```css
+#write {
+  max-width: 752px;
+}
+```
+
+### 修改侧边栏宽度
+
+```css
+:root {
+  --sidebar-width: 280px;
+}
+```
+
+## 与上游主题的关系
+
+本主题基于 [blaxisomu/typora_claude](https://github.com/blaxisomu/typora_claude) 修改。
+
+上游主题提供了 Claude 风格 Typora 主题的主要设计基础，包括 Claude 风格的 Markdown 排版、衬线阅读体验、侧边栏适配和字体资源。本项目在此基础上进一步整理、优化和扩展。
+
+主要改动包括：
+
+- 统一 CSS 变量命名和兼容别名
+- 优化亮色主题的颜色、边框、阴影和焦点状态
+- 调整 Typora 侧边栏、文件树、大纲和搜索细节
+- 增强一体化模式、菜单页、右键菜单和浮层的一致性
+- 优化 YAML、Callout、代码块、表格、脚注和 PDF 导出表现
+- 清理重复规则，统一格式和注释结构
+
+## 兼容性说明
+
+该主题主要针对 Typora 桌面端设计。
+
+已重点适配：
+
+- Windows 版 Typora
+- Typora 一体化模式
+- 文件树视图
+- 大纲视图
+- PDF / 打印导出
+
+macOS 下大部分样式可用，但部分窗口栏、侧边栏或系统控件细节可能与 Windows 表现不同。
+
+## 注意事项
+
+由于主题为了保持简洁和低干扰，会隐藏或弱化部分 Typora 默认界面元素，例如：
+
+- 收展侧边栏按钮
+- 切换源码模式按钮
+- 部分 Markdown 标记符号
+- 部分水平滚动条
+- 部分默认边框和分割线
+
+如果你依赖这些控件，可以在 CSS 中搜索对应注释或选择器，将相关 `display: none` / `background: transparent` 等规则删除或覆盖。
+
+## 致谢
+
+感谢 [blaxisomu/typora_claude](https://github.com/blaxisomu/typora_claude) 提供的原始主题设计与实现基础。
+
+## License
+
+本项目是基于上游主题的个人修改版。发布前请根据你的实际仓库内容、字体来源、截图素材和上游项目要求补充许可证说明。
+
+如果你继续分发基于上游主题的版本，建议保留来源声明和致谢。
